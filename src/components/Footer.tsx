@@ -29,7 +29,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/10 text-center text-gray-500">
-          <p>&copy; 2024 AI Cameraman. All rights reserved.</p>
+          <p>&copy; 2025 Koji Wong. All rights reserved.</p>
         </div>
       </div>
     </footer>

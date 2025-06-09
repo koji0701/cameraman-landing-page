@@ -4,7 +4,26 @@ import { Play } from "lucide-react"
 export default function Demo() {
   return (
     <section className="py-24 px-6 lg:px-8 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-950 to-black" />
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
+      </div>
+
+      {/* Floating particles */}
+      <div className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white/20 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 3}s`,
+            }}
+          />
+        ))}
+      </div>
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -19,20 +38,14 @@ export default function Demo() {
           <div className="aspect-video bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
             <div className="relative w-full h-full bg-black flex items-center justify-center group cursor-pointer">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10" />
-              <img
-                src="/placeholder.svg?height=400&width=800"
-                alt="AI Cameraman Demo"
+              <video
+                src="/demo.mp4"
                 className="w-full h-full object-cover opacity-60"
+                autoPlay
+                loop
+                muted
+                playsInline
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Button
-                  size="lg"
-                  className="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-sm text-white group-hover:scale-110 transition-all duration-300"
-                >
-                  <Play className="w-8 h-8 mr-3" />
-                  Play Demo
-                </Button>
-              </div>
 
               {/* Video overlay UI elements */}
               <div className="absolute top-4 left-4 bg-red-500 w-3 h-3 rounded-full animate-pulse" />

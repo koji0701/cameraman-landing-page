@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import { Download, Play, Sparkles } from "lucide-react"
+import { Download, Play, Sparkles, Github } from "lucide-react"
 
 export default function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
@@ -59,9 +59,10 @@ export default function Hero() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-105"
+                disabled
               >
                 <Download className="w-5 h-5 mr-2" />
-                Download for macOS / Windows
+                Coming Soon - macOS / Windows
               </Button>
 
               <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
@@ -84,6 +85,18 @@ export default function Hero() {
                   </div>
                 </DialogContent>
               </Dialog>
+
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                asChild
+              >
+                <a href="https://github.com/koji0701/cameraman-ai-agent/tree/dev" target="_blank" rel="noopener noreferrer">
+                  <Github className="w-5 h-5 mr-2" />
+                  Use the CLI or Desktop GUI (beta)
+                </a>
+              </Button>
             </div>
 
             <div className="flex items-center gap-8 pt-8">
@@ -105,13 +118,13 @@ export default function Hero() {
           {/* Right mockup */}
           <div className="relative">
             <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 shadow-2xl border border-white/10">
-              <div className="aspect-video bg-black rounded-lg overflow-hidden relative">
+              <div className="aspect-[4/3] bg-black rounded-lg overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
                 <div className="absolute inset-4 border-2 border-blue-400/50 rounded-lg animate-pulse" />
                 <div className="absolute top-4 left-4 bg-red-500 w-3 h-3 rounded-full animate-pulse" />
                 <div className="absolute bottom-4 right-4 text-xs text-white/60">AI Tracking Active</div>
                 <img
-                  src="/placeholder.svg?height=300&width=500"
+                  src="/gui1.png"
                   alt="AI Cameraman Interface"
                   className="w-full h-full object-cover opacity-80"
                 />

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Demo from '../components/Demo';
@@ -9,13 +10,18 @@ import Footer from '../components/Footer';
 ---
 
 <Layout title="AI Cameraman - AI-Powered Video Cropping">
+  <Navigation client:load />
   <main class="min-h-screen text-white">
     <Hero client:load />
-    <Features client:visible />
+    <div id="features">
+      <Features client:visible />
+    </div>
     <div id="demo">
       <Demo client:visible />
     </div>
-    <HowItWorks client:visible />
+    <div id="how-it-works">
+      <HowItWorks client:visible />
+    </div>
     <CTA client:visible />
     <Footer />
   </main>

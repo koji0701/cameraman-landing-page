@@ -12,10 +12,10 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left content */}
           <div className="text-left space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-blue-400" />
               <span className="text-sm text-gray-300">Powered by Gemini 2.5 & OpenCV</span>
-            </div>
+            </div> */}
 
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
@@ -65,12 +65,12 @@ export default function Hero() {
 
             <div className="flex items-center gap-8 pt-8">
               <div className="text-center">
-                <div className="text-2xl font-bold text-white">70%</div>
-                <div className="text-sm text-gray-400">Smaller Files</div>
+                <div className="text-2xl font-bold text-white">Works for Free</div>
+                <div className="text-sm text-gray-400">Gemini Free Tier</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-white">Real-time</div>
-                <div className="text-sm text-gray-400">Processing</div>
+                <div className="text-2xl font-bold text-white">Dynamic</div>
+                <div className="text-sm text-gray-400">Camera Processing</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-white">AI-Powered</div>

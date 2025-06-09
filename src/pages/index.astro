@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero';
+import Features from '../components/Features';
+import Demo from '../components/Demo';
+import HowItWorks from '../components/HowItWorks';
+import Testimonials from '../components/Testimonials';
+import CTA from '../components/CTA';
+import Footer from '../components/Footer';
+---
+
+<Layout title="AI Cameraman - AI-Powered Video Cropping">
+  <main class="min-h-screen bg-black text-white">
+    <Hero client:load />
+    <Features client:visible />
+    <Demo client:visible />
+    <HowItWorks client:visible />
+    <Testimonials client:visible />
+    <CTA client:visible />
+    <Footer />
+  </main>
+</Layout>
+
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    return 'dark';
+  };
+  const isDark = getThemePreference() === 'dark';
+  document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+  if (typeof localStorage !== 'undefined') {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  }
+</script>

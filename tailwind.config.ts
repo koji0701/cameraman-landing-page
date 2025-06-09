@@ -57,7 +57,7 @@ const config: Config = {
         float: "float 3s ease-in-out infinite",
       },
       fontFamily: {
-        inter: ["Inter", "system-ui", "sans-serif"],
+        "space-grotesk": ["Space Grotesk", "system-ui", "sans-serif"],
       },
     },
   },

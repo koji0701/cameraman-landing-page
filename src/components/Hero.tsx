@@ -1,35 +1,12 @@
 "use client"
 
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
-import { Download, Play, Sparkles, Github } from "lucide-react"
+import { Play, Sparkles, Github } from "lucide-react"
 
 export default function Hero() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),transparent_50%)]" />
-      </div>
-
-      {/* Floating particles */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
-            }}
-          />
-        ))}
-      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -56,37 +33,8 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-105"
-                disabled
-              >
-                <Download className="w-5 h-5 mr-2" />
-                Coming Soon - macOS / Windows
-              </Button>
 
-              <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-white/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105"
-                  >
-                    <Play className="w-5 h-5 mr-2" />
-                    Watch Demo
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="max-w-4xl bg-black/90 border-white/20">
-                  <div className="aspect-video bg-gray-900 rounded-lg flex items-center justify-center">
-                    <div className="text-center space-y-4">
-                      <Play className="w-16 h-16 mx-auto text-white/60" />
-                      <p className="text-white/80">Demo video would be embedded here</p>
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
-
-              <Button
+            <Button
                 variant="outline"
                 size="lg"
                 className="border-white/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105"
@@ -97,6 +45,22 @@ export default function Hero() {
                   Use the CLI or Desktop GUI (beta)
                 </a>
               </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/20 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                onClick={() => {
+                  document.getElementById('demo')?.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }}
+              >
+                <Play className="w-5 h-5 mr-2" />
+                Watch Demo
+              </Button>
+
+
             </div>
 
             <div className="flex items-center gap-8 pt-8">

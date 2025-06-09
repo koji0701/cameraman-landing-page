@@ -9,10 +9,12 @@ import Footer from '../components/Footer';
 ---
 
 <Layout title="AI Cameraman - AI-Powered Video Cropping">
-  <main class="min-h-screen bg-black text-white">
+  <main class="min-h-screen text-white">
     <Hero client:load />
     <Features client:visible />
-    <Demo client:visible />
+    <div id="demo">
+      <Demo client:visible />
+    </div>
     <HowItWorks client:visible />
     <CTA client:visible />
     <Footer />

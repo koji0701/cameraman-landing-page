@@ -13,18 +13,15 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-8">
-            <a href="#" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+            <a href="https://github.com/koji0701" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
               <Github className="w-5 h-5" />
               GitHub
             </a>
-            <a href="#" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+            <a href="kojirwong@gmail.com" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
               <Mail className="w-5 h-5" />
               Contact
             </a>
-            <a href="#" className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-              <Shield className="w-5 h-5" />
-              Privacy
-            </a>
+
           </div>
         </div>
 
